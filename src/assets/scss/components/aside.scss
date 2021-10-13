@@ -1,0 +1,345 @@
+.aside {
+  grid-area: aside;
+  padding: 4rem 1.6rem 13rem 17rem;
+  @media screen and (max-width: 1920px) {
+    padding: 4rem 1.6rem calc(4rem + (130 - 40) * ((100vw - 37.5rem) / (1920 - 375)))
+      calc(1.6rem + (170 - 16) * ((100vw - 37.5rem) / (1920 - 375)));
+  }
+  &__title {
+    @extend %title;
+    color: $white;
+    margin: 0 0 2.4rem 0;
+    @media screen and (max-width: 1920px) {
+      font-size: calc(3.2rem + (56 - 32) * ((100vw - 37.5rem) / (1920 - 375)));
+    }
+  }
+}
+
+.route {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 4rem 0;
+  position: relative;
+  &__title {
+    @extend %subtitle;
+    color: $white;
+    &::before {
+      position: absolute;
+      content: "1";
+      top: 3px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-color: $red;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    margin: 0 0 1.6rem 3rem;
+    & + div {
+      margin-bottom: 1.6rem;
+    }
+    @media screen and (max-width: 1920px) {
+      font-size: calc(2rem + (24 - 20) * ((100vw - 37.5rem) / (1920 - 375)));
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__content-label {
+    @extend %text;
+    color: $white;
+    margin: 0 0 0.8rem 0;
+  }
+  &__content-input {
+    max-width: 72.8rem;
+    padding: 1.4rem 1rem 1.4rem 1rem;
+  }
+}
+
+.transport {
+  position: relative;
+  margin: 0 0 4rem 0;
+  &__title {
+    @extend %subtitle;
+    color: $white;
+    margin: 0 0 1.6rem 3rem;
+    &::before {
+      position: absolute;
+      content: "2";
+      top: 3px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-color: $red;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    @media screen and (max-width: 1920px) {
+      font-size: calc(2rem + (24 - 20) * ((100vw - 37.5rem) / (1920 - 375)));
+    }
+  }
+  &__content {
+    display: flex;
+    column-gap: 1.2rem;
+  }
+}
+
+.cargo {
+  position: relative;
+  margin: 0 0 1.6rem 0;
+  &__title {
+    @extend %subtitle;
+    color: $white;
+    margin: 0 0 1.6rem 3rem;
+    &::before {
+      position: absolute;
+      content: "3";
+      top: 3px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-color: $red;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    @media screen and (max-width: 1920px) {
+      font-size: calc(2rem + (24 - 20) * ((100vw - 37.5rem) / (1920 - 375)));
+    }
+  }
+
+  &__footer {
+    margin: 1.6rem 0 0 0;
+    display: flex;
+    column-gap: 1.2rem;
+  }
+
+  &__footer-items {
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+
+  &__footer-item-label {
+    font-size: 13px;
+    line-height: 16px;
+    color: #fff;
+    margin: 0 0 0.8rem 0;
+  }
+
+  &__footer-item-input {
+    padding: 1.4rem 1rem 1.4rem 1rem;
+    width: 165px;
+  }
+}
+.temp {
+  &__checkbox {
+    position: relative;
+    margin: 0 0 2rem 0;
+  }
+
+  &__checkbox-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+  }
+
+  &__checkbox-label {
+    @extend %text;
+    color: $white;
+    user-select: none;
+    cursor: pointer;
+    padding-left: 3.6rem;
+    &::before {
+      content: "";
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 0.2rem solid $white;
+      position: absolute;
+      left: 0;
+      top: -3px;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      background-image: url("/assets/images/Combined-Shape.svg");
+      background-position: 50%;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      top: -3px;
+      z-index: 2;
+      opacity: 0;
+    }
+  }
+  &__checkbox-input:checked + label::before {
+    background-color: $red;
+    border: 0.2rem solid $red;
+  }
+  &__checkbox-input:checked + label::after {
+    opacity: 1;
+  }
+  &__content {
+    display: none;
+    &.isActive {
+      display: block;
+    }
+  }
+
+  &__content-items {
+    display: flex;
+    column-gap: 1.2rem;
+  }
+
+  &__content-item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.time {
+  position: relative;
+  margin: 4rem 0 0 0;
+  &__title {
+    @extend %subtitle;
+    color: $white;
+    margin: 0 0 1.6rem 3rem;
+    &::before {
+      position: absolute;
+      content: "4";
+      top: 3px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-color: $red;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    @media screen and (max-width: 1920px) {
+      font-size: calc(2rem + (24 - 20) * ((100vw - 37.5rem) / (1920 - 375)));
+    }
+  }
+
+  &__content {
+    max-width: 72.8rem;
+  }
+
+  &__labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > p {
+      margin: 0 0 0.9rem 0;
+    }
+  }
+
+  &__labels-item {
+    font-size: 13px;
+    line-height: 15px;
+    color: $white;
+  }
+
+  &__inputs {
+    & > :not(:last-child) {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__input-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #717174;
+    color: #afaeae;
+    padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+    font-size: 13px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__input-adress {
+    padding: 1.3rem 1.3rem 1.3rem 3.6rem;
+    background: #4b4b4f;
+    color: $white;
+    &::placeholder {
+      font-size: 15px;
+      line-height: 17px;
+      color: #cfcfcf;
+    }
+  }
+
+  &__input-dot {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -30px;
+      left: 12px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 4px solid $white;
+    }
+  }
+
+  &__input-adress:focus ~ &__input-dot::before {
+    border: 4px solid $red;
+  }
+
+  &__input-adress:focus + &__input-label {
+    color: $white;
+  }
+
+  &__textarea {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.6rem;
+  }
+
+  &__textarea-label {
+    margin: 0 0 0.9rem 0;
+    font-size: 13px;
+    line-height: 15px;
+    color: $white;
+  }
+
+  &__textarea-textarea {
+    resize: none;
+    max-width: 72.8rem;
+    height: 8rem;
+    padding: 1.3rem;
+    &::placeholder {
+      font-size: 15px;
+      line-height: 17px;
+      color: #cfcfcf;
+    }
+  }
+}

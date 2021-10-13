@@ -1,0 +1,95 @@
+.select {
+  &__container {
+    position: relative;
+  }
+  &__label {
+    @extend %text;
+    color: $white;
+    margin: 0 0 0.8rem 0;
+  }
+  &__default {
+    color: $black;
+    position: relative;
+    display: block;
+    min-width: 165px;
+    text-align: left;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    padding: 1.3rem 3rem 1.3rem 1.3rem;
+    white-space: nowrap;
+    width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      transform: translateY(-40%) rotate(-45deg);
+      right: 18px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid;
+      border-color: transparent transparent #1a1a1a #1a1a1a;
+      border-radius: 2px;
+      transition: 0.3s all ease;
+      pointer-events: none;
+    }
+    &.isActive::after {
+      top: 40%;
+      transform: rotate(-225deg);
+      transition: 0.3s all ease;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 31%;
+      height: 100%;
+      background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+      background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+      background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+    }
+  }
+  &__default-gargo {
+    min-width: 342px;
+  }
+
+  &__default-text {
+  }
+  &__option {
+    background-color: #fff;
+    min-width: 165px;
+    overflow: hidden;
+    position: absolute;
+    top: 67px;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all ease;
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__option-gargo {
+    min-width: 342px;
+  }
+
+  &__option-item {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    padding: 1.3rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
+  }
+  &__input {
+    display: none;
+  }
+}

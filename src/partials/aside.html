@@ -1,0 +1,143 @@
+<aside class="aside">
+  <h2 class="aside__title">FTL: Прямая машина</h2>
+  <div class="aside__route route">
+    <p class="route__title">Маршрут</p>
+    <div class="route__content">
+      <label class="route__content-label">Откуда</label>
+      <input class="route__content-input" type="text">
+    </div>
+    <div class="route__content">
+      <label class="route__content-label">Куда</label>
+      <input class="route__content-input" type="text">
+    </div>
+  </div>
+  <div class="aside__transport transport">
+    <p class="transport__title">Транспорт</p>
+    <div class="transport__content">
+      <div class="select">
+        <div class="select__container">
+          <p class="select__label">Грузоподъёмность</p>
+          <button class="select__default">
+            <span class="select__default-text">Не выбрана</span>
+          </button>
+          <ul class="select__option">
+            <li class="select__option-item" data-value="value1"><span class="select__default-text">Не выбрана</span>
+            </li>
+            <li class="select__option-item" data-value="value2"><span class="select__default-text">Вариант 1</span></li>
+            <li class="select__option-item" data-value="value3"><span class="select__default-text">Вариант 2</span></li>
+            <li class="select__option-item" data-value="value4"><span class="select__default-text">Вариант 3</span></li>
+            <li class="select__option-item" data-value="value5"><span class="select__default-text">Вариант 4</span></li>
+          </ul>
+          <input class="select__input" type="text" name="option-value" value="" />
+        </div>
+      </div>
+      <div class="select">
+        <div class="select__container">
+          <p class="select__label">Способ погрузки</p>
+          <button class="select__default">
+            <span class="select__default-text">Не выбран</span>
+          </button>
+          <ul class="select__option">
+            <li class="select__option-item" data-value="value1"><span class="select__default-text">Не выбран</span>
+            </li>
+            <li class="select__option-item" data-value="value2"><span class="select__default-text">Вариант 1</span>
+            </li>
+            <li class="select__option-item" data-value="value3"><span class="select__default-text">Вариант 2</span></li>
+            <li class="select__option-item" data-value="value4"><span class="select__default-text">Вариант 3</span></li>
+            <li class="select__option-item" data-value="value5"><span class="select__default-text">Вариант 4</span></li>
+          </ul>
+          <input class="select__input" type="text" name="option-value" value="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="aside__cargo cargo">
+    <p class="cargo__title">Груз</p>
+    <div class="select">
+      <div class="select__container">
+        <p class="select__label">Тип груза</p>
+        <button class="select__default select__default-gargo">
+          <span class="select__default-text">Не выбран</span>
+        </button>
+        <ul class="select__option select__option-gargo">
+          <li class="select__option-item" data-value="value1"><span class="select__default-text">Не выбран</span>
+          </li>
+          <li class="select__option-item" data-value="value2"><span class="select__default-text">Вариант 1</span>
+          </li>
+          <li class="select__option-item" data-value="value3"><span class="select__default-text">Вариант 2</span></li>
+          <li class="select__option-item" data-value="value4"><span class="select__default-text">Вариант 3</span></li>
+          <li class="select__option-item" data-value="value5"><span class="select__default-text">Вариант 4</span></li>
+        </ul>
+        <input class="select__input" type="text" name="option-value" value="" />
+      </div>
+    </div>
+    <div class="cargo__footer">
+      <div class="select">
+        <div class="select__container">
+          <p class="select__label">Класс опасности</p>
+          <button class="select__default">
+            <span class="select__default-text">Класс 5 — Окисляющие вещества и органические перекиси</span>
+          </button>
+          <ul class="select__option">
+            <li class="select__option-item" data-value="value1"><span class="select__default-text">Не выбран</span>
+            </li>
+            <li class="select__option-item" data-value="value2"><span class="select__default-text">Класс 5 — Окисляющие
+                вещества и органические перекиси</span></li>
+            <li class="select__option-item" data-value="value3"><span class="select__default-text">Вариант 2</span></li>
+            <li class="select__option-item" data-value="value4"><span class="select__default-text">Вариант 3</span></li>
+            <li class="select__option-item" data-value="value5"><span class="select__default-text">Вариант 4</span></li>
+          </ul>
+          <input class="select__input" type="text" name="option-value" value="" />
+        </div>
+      </div>
+      <div class="cargo__footer-items">
+        <label class="cargo__footer-item-label">Объявленная ценность, ₽</label>
+        <input class="cargo__footer-item-input" type="text" placeholder="≥ 1">
+      </div>
+    </div>
+  </div>
+  <div class="aside__temp temp">
+    <div class="temp__checkbox">
+      <input class="temp__checkbox-input" type="checkbox" id="temp">
+      <label class="temp__checkbox-label" for="temp">Требуется температурный режим</label>
+    </div>
+    <div class="temp__content">
+      <div class="temp__content-items">
+        <div class="temp__content-item">
+          <label class="cargo__footer-item-label">От, °C</label>
+          <input class="cargo__footer-item-input" type="text" placeholder="-20">
+        </div>
+        <div class="temp__content-item">
+          <label class="cargo__footer-item-label">До, °C</label>
+          <input class="cargo__footer-item-input" type="text" placeholder="+23">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="aside__time time">
+    <p class="time__title">Время</p>
+    <div class="time__content">
+      <div class="time__labels">
+        <p class="time__labels-item" for="">Когда прибыть на точку</p>
+        <p class="time__labels-item" for="">700 км в день</p>
+      </div>
+      <div class="time__inputs">
+        <div class="time__input">
+          <input class="time__input-adress" id="username" type="text" name="username" placeholder="Адрес не указан">
+          <label class="time__input-label" for="username">НЕ ВЫБРАНО</label>
+          <span class="time__input-dot"></span>
+        </div>
+        <div class="time__input">
+          <input class="time__input-adress" id="name" type="text" name="name" placeholder="Адрес не указан">
+          <label class="time__input-label" for="name">НЕ ВЫБРАНО</label>
+          <span class="time__input-dot"></span>
+        </div>
+      </div>
+      <div class="time__textarea">
+        <label class="time__textarea-label">Комментарий к заказу</label>
+        <textarea class="time__textarea-textarea " name="time-textarea" id="time"
+          placeholder="Укажите особенности въезда на&nbsp;территорию склада или подъезда к&nbsp;адресу"></textarea>
+      </div>
+    </div>
+  </div>
+</aside>

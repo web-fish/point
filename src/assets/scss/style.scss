@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap&subset=cyrillic-ext");
+@import "reset";
+@import "vars";
+@import "extend";
+@import "include";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background-color: $backgroundColor;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(auto, 914px) 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "aside main";
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "aside"
+      "main";
+  }
+}
+
+@import "components/aside.scss";
+@import "components/select.scss";
+@import "components/main.scss";
